@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users, posts;
 
 CREATE TABLE users (
   user_id           SERIAL          PRIMARY KEY,
-  github_id         INTEGER         NOT NULL,
+  github_id         INTEGER         NOT NULL UNIQUE,
   username          VARCHAR(100)    NOT NULL,
   avatar_url        VARCHAR(500)    NOT NULL,
   access_token      VARCHAR(500)    NOT NULL
