@@ -16,6 +16,13 @@ const home = {
     });
   },
 };
+const styles = {
+  method: 'GET',
+  path: '../public/{file*}',
+  handler: (req, reply) => {
+    reply.file('styles');
+  },
+};
 
 const loginPage = {
   method: 'GET',
