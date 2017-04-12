@@ -6,11 +6,20 @@ const Handlebars = require('handlebars');
 const cookieAuth = require('hapi-auth-cookie');
 const hapiAuth = require('hapi-auth-basic');
 const validate = require('./validate');
+const fs = require('fs');
 
 const server = new hapi.Server();
 
+const port = process.env.PORT || 4000;
+
+const tls = {
+  key: fs.readFileSync('./keys/key.pem'),
+  cert: fs.readFileSync('./keys/cert.pem'),
+};
+
 server.connection({
-  port: process.env.PORT || 4000,
+  port,
+  tls,
 });
 
 server.register([inert, vision, hapiAuth, cookieAuth], (err) => {
