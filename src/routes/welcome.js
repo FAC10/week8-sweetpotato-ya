@@ -29,7 +29,7 @@ module.exports = {
           });
           console.log(bodyObject.login, '<<<<<<<<<<<');
         });
-        reply.redirect('/secure');
+        reply.redirect('/secure', { credentials: req.auth.credentials });
       });
     });
   },

@@ -19,6 +19,9 @@ const tls = {
 server.connection({
   port,
   tls,
+  state: {
+    isSameSite: 'Lax',
+  },
 });
 
 server.register([inert, vision, hapiAuth, cookieAuth], (err) => {
