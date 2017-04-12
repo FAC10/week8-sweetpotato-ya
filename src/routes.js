@@ -56,7 +56,7 @@ const loginFunc = require('./login.js');
 module.exports = [
   require('./routes/home'),
   require('./routes/login'),
-  require('./routes/welcome')
+  require('./routes/welcome'),
   // createPost,
   // logout,
   // postBlog,
