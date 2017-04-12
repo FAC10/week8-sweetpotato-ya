@@ -12,32 +12,30 @@ https://enigmatic-savannah-93237.herokuapp.com
 * (we don't have any tests, we know, bad us)
 * We will post the usernames and passwords in gitter (security n that)
 
+### User stories
 
-## Database schema:
+**As a** member of Founders and Coders, who wants to learn from my fellow devs
+> **I want to** log in with my Github account  
+> **So that** I can use my Github organisation's info to see posts from my fellow students.
 
-### Users: 1 to 1
-Column | Type | Modifiers
---- | --- | ---
-user_id | integer | not null default
-username | character varying(100) | not null
-password | character varying(50) | not null
-isAdmin | boolean | not null
+Acceptance criteria:
 
-### Posts: 1 to Many
++ [ ] I can click on a button, which allows me to log in via my Github account
++ [ ] The look of the button should make it obvious that it is this form of login
++ [ ] Once I'm logged in, I should see a list of blog posts
++ [ ] I shouldn't be left with a blank loading screen for too long during the authorisation process, otherwise I will lose confidence in your website and leave.
 
-Column | Type | Modifiers
---- | --- | ---
-post_id | integer | not null default
-title | character varying(50) | not null
-body | character varying(500) | not null
-date | date | not null
-user_id | integer | not null
+**As** any user who is logged in
+> **I want to** see my username & Github profile picture on the homepage  
+> **So that** I benefit from logging in with Github OAuth, and don't have to do any profile setup on your site.
+
+Acceptance criteria:
+
++ [ ] I can see my username & profile picture on each page that I visit
 
 ## What?
 A basic CMS blog platform with authentication, session management and templating with handlebars.
 
-## Why?
-<user stories go here>
 
 ## How?
 hapi for server creation and general back end stuff<br>
