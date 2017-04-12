@@ -5,8 +5,6 @@ const vision = require('vision');
 const Handlebars = require('handlebars');
 const cookieAuth = require('hapi-auth-cookie');
 const hapiAuth = require('hapi-auth-basic');
-// const validate = require('./validate');
-const jwt = require('hapi-auth-jwt2');
 const fs = require('fs');
 
 const server = new hapi.Server();
@@ -23,7 +21,7 @@ server.connection({
   tls,
 });
 
-server.register([inert, vision, hapiAuth, cookieAuth, jwt], (err) => {
+server.register([inert, vision, hapiAuth, cookieAuth], (err) => {
   if (err) throw err;
 
   const options = {

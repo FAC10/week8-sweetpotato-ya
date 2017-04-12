@@ -4,9 +4,10 @@ DROP TABLE IF EXISTS users, posts;
 
 CREATE TABLE users (
   user_id           SERIAL          PRIMARY KEY,
-  github_id         INTEGER        NOT NULL,
-  username          VARCHAR(100)      NOT NULL,
-  avatar_url        VARCHAR(2083)
+  github_id         INTEGER         NOT NULL,
+  username          VARCHAR(100)    NOT NULL,
+  avatar_url        VARCHAR(500)    NOT NULL,
+  access_token      VARCHAR(500)    NOT NULL
 );
 
 CREATE TABLE posts (
@@ -18,9 +19,9 @@ CREATE TABLE posts (
 );
 
 -- 1 TO MANY
-INSERT INTO users(github_id, username, avatar_url) VALUES
-(18493541, 'antoniotrkdz', 'https://avatars2.githubusercontent.com/u/18493541?v=3'),
-(22013117,'yvonne-liu', 'https://avatars0.githubusercontent.com/u/22013117?v=3');
+INSERT INTO users(github_id, username, avatar_url, access_token) VALUES
+(18493541, 'antoniotrkdz', 'https://avatars2.githubusercontent.com/u/18493541?v=3', 'superaccess'),
+(22013117,'yvonne-liu', 'https://avatars0.githubusercontent.com/u/22013117?v=3', 'superaccess');
 
 -- 1 TO 1
 INSERT INTO posts(title, body, date, user_id) VALUES
