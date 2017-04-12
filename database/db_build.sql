@@ -6,7 +6,7 @@ CREATE TABLE users (
   user_id           SERIAL          PRIMARY KEY,
   github_id         INTEGER        NOT NULL,
   username          VARCHAR(100)      NOT NULL,
-  avatar_url        VARCHAR(283)
+  avatar_url        VARCHAR(2083)
 );
 
 CREATE TABLE posts (

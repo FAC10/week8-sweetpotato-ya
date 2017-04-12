@@ -18,7 +18,8 @@ module.exports = {
         const bodyObject = JSON.parse(bodyString);
         console.log('>>>>>>>', bodyObject);
       });
-      reply('Hello');
+      // reply.view('welcome');
+      reply.redirect('/secure');
     });
   },
 };
