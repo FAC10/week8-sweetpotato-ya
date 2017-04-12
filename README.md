@@ -36,7 +36,6 @@ Acceptance criteria:
 ## What?
 A basic CMS blog platform with authentication, session management and templating with handlebars.
 
-
 ## How?
 hapi for server creation and general back end stuff<br>
 PSQL hosted on heroku for the database<br>
