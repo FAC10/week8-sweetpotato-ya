@@ -12,14 +12,17 @@ const server = new hapi.Server();
 
 const port = process.env.PORT || 4000;
 
-const tls = {
-  key: fs.readFileSync('./keys/key.pem'),
-  cert: fs.readFileSync('./keys/cert.pem'),
-};
+// const tls = {
+//   key: fs.readFileSync('./keys/key.pem'),
+//   cert: fs.readFileSync('./keys/cert.pem'),
+// };
 
 server.connection({
   port,
-  tls,
+  tls: process.env.NODE_ENV !== 'production' && {
+    key: fs.readFileSync('./keys/key.pem'),
+    cert: fs.readFileSync('./keys/cert.pem'),
+  },
   state: {
     isSameSite: 'Lax',
   },
