@@ -12,11 +12,6 @@ const server = new hapi.Server();
 
 const port = process.env.PORT || 4000;
 
-// const tls = {
-//   key: fs.readFileSync('./keys/key.pem'),
-//   cert: fs.readFileSync('./keys/cert.pem'),
-// };
-
 server.connection({
   port,
   tls: process.env.NODE_ENV !== 'production' && {
@@ -32,7 +27,7 @@ server.register([inert, vision, hapiAuth, cookieAuth, credentials], (err) => {
   if (err) throw err;
 
   const options = {
-    password: '12345678901234567890123456789012345678901234567890123456789012345678901234567890',
+    password: process.env.COOKIE_PASSWORD,
     cookie: 'logged-in',
     isSecure: false,
     ttl: 24 * 60 * 60 * 1000,
