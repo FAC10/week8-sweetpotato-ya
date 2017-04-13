@@ -1,5 +1,11 @@
 {{> header}}
 
-<form action='/login' method='GET'>
-    <button class='login' type='submit'>Login here using Github!</button>
-</form>
+{{#if credentials.username}}
+    <form action='/login' method='GET'>
+        <button class='login' type='submit'>Write something!</button>
+    </form>
+{{else}}
+    <form action='/login' method='GET'>
+        <button class='login' type='submit'>Login here using Github!</button>
+    </form>
+{{/if}}
