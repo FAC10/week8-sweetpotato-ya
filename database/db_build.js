@@ -7,7 +7,6 @@ const buildDatabase = () => {
 
   connection.query(sql, (err, result) => {
     if (err) {
-      console.log('error', err);
       throw new Error('Cannot create database');
     } else {
       console.log('Database created');
