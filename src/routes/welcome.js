@@ -19,13 +19,10 @@ module.exports = {
       request.get({ url: 'https://api.github.com/user', headers }, (error, response, bodyString) => {
         if (error) throw error;
         const bodyObject = JSON.parse(bodyString);
-        // console.log(bodyObject, 'GIVE ME BODYBOJECT');
         const sqlQuery = `INSERT INTO users (username, avatar_url, github_id, access_token) VALUES ('${bodyObject.login}', '${bodyObject.avatar_url}', ${bodyObject.id}, '${accessToken}') ON CONFLICT (github_id) DO UPDATE SET username = excluded.username, avatar_url = excluded.avatar_url, access_token = excluded.access_token;`;
         dbConnection.query(sqlQuery, (err, res) => {
           if (err) throw err;
         });
-        // console.log(bodyObject.login, '<<<<<<<<<<<');
-        // console.log(bodyObject.avatar_url, '<<<<<<<<<<<');
         req.cookieAuth.set({
           username: bodyObject.login,
           avatar: bodyObject.avatar_url,
