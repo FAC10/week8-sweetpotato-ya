@@ -1,15 +1,11 @@
 
-# :sweet_potato: Sweet Potato CMS :sweet_potato:
-https://enigmatic-savannah-93237.herokuapp.com
-
-[![Build Status](https://travis-ci.org/yvonne-liu/week7-sweetpotato-cms.svg?branch=master)](https://travis-ci.org/yvonne-liu/week7-sweetpotato-cms)
-![codecov](https://codecov.io/gh/yvonne-liu/week7-sweetpotato-cms/branch/master/graph/badge.svg)
+# :sweet_potato: Sweet Potato YA! :sweet_potato:
 
 ## How to do a run of your app?
 * clone this repo
-* ```npm i```
-* ```npm run devStart```
-* (we don't have any tests, we know, bad us)
+* run ```npm install```
+* create ```config.env```
+* add a ```DATABASE_URL``` variable
 * We will post the usernames and passwords in gitter (security n that)
 
 ### User stories
@@ -20,10 +16,10 @@ https://enigmatic-savannah-93237.herokuapp.com
 
 Acceptance criteria:
 
-+ [ ] I can click on a button, which allows me to log in via my Github account
++ [x] I can click on a button, which allows me to log in via my Github account
 + [ ] The look of the button should make it obvious that it is this form of login
-+ [ ] Once I'm logged in, I should see a list of blog posts
-+ [ ] I shouldn't be left with a blank loading screen for too long during the authorisation process, otherwise I will lose confidence in your website and leave.
++ [x] Once I'm logged in, I should see a list of blog posts
++ [x] I shouldn't be left with a blank loading screen for too long during the authorisation process, otherwise I will lose confidence in your website and leave.
 
 **As** any user who is logged in
 > **I want to** see my username & Github profile picture on the homepage  
@@ -33,14 +29,23 @@ Acceptance criteria:
 
 + [ ] I can see my username & profile picture on each page that I visit
 
-## What?
-A basic CMS blog platform with authentication, session management and templating with handlebars.
+## Database schema:
 
-## How?
-hapi for server creation and general back end stuff<br>
-PSQL hosted on heroku for the database<br>
-bcrypt for password hashing<br>
-handlebars for templating<br>
+### Users:
+Column | Type | Modifiers
+--- | --- | ---
+user_id | serial  | primary key
+github_id | integer | not null unique
+username | varchar(100) | not null
+avatar_url | varchar(500) | not null
+access_token | varchar(500) | not null
 
-## What did u learn tho?
-[leaaaaaaaaarnings](./learnings.md)
+### Posts:
+
+Column | Type | Modifiers
+--- | --- | ---
+post_id | integer | not null default
+title | character varying(50) | not null
+body | character varying(500) | not null
+date | date | not null
+user_id | integer | references users(user_id)
