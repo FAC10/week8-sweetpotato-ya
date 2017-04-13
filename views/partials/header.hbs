@@ -2,7 +2,7 @@
     <h1>Welcome to our blog</h1>
     {{#if credentials.username}}
         <h2>Hi {{credentials.username}}!</h2>
-        <img class='github-img' src={{credentials.avatar}} alt="user picture">
+        <img src={{credentials.avatar}} alt="user picture">
     {{else}}
         <h2>Hello!</h2>
     {{/if}}

@@ -4,5 +4,28 @@ body {
 }
 
 img {
-  border-radius: 50%; 
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.login {
+  color: #202129;
+  background-color: #edeeee;
+  margin: 10px;
+  padding: 12px 12px;
+  cursor: pointer;
+  transition: all 60ms ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  border: 0 none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.login:hover {
+    transition: all 60ms ease;
+    opacity: .85;
 }
