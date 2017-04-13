@@ -1,9 +1,5 @@
-const env = require('env2');
-env('config.env');
-
-// const querystring = require('querystring');
+const env = require('env2')('config.env');
 const clientID = process.env.CLIENT_ID;
-// const cookieAuth = require('hapi-auth-cookie');
 
 module.exports = {
   method: 'GET',
