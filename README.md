@@ -1,5 +1,7 @@
 
 # :sweet_potato: Sweet Potato YA! :sweet_potato:
+[![Build Status](https://travis-ci.org/yvonne-liu/week8-sweetpotato-ya.svg?branch=master)](https://travis-ci.org/yvonne-liu/week8-sweetpotato-ya)
+
 
 ## How to do a run of your app?
 * clone this repo
