@@ -4,4 +4,5 @@ module.exports = [
   require('./routes/welcome'),
   require('./routes/secure'),
   require('./routes/public'),
+  require('./routes/logout.js'),
 ];

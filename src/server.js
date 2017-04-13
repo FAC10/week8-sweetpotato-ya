@@ -32,7 +32,6 @@ server.register([inert, vision, hapiAuth, cookieAuth, credentials], (err) => {
     password: '12345678901234567890123456789012345678901234567890123456789012345678901234567890',
     cookie: 'logged-in',
     isSecure: false,
-    // isSameSite: false,
     ttl: 24 * 60 * 60 * 1000,
   };
 
