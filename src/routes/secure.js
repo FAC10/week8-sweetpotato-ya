@@ -1,4 +1,5 @@
 const dbConnection = require('../../database/db_connection.js');
+const credentials = require('hapi-context-credentials');
 
 module.exports = {
   method: 'GET',

@@ -5,6 +5,7 @@ const vision = require('vision');
 const Handlebars = require('handlebars');
 const cookieAuth = require('hapi-auth-cookie');
 const hapiAuth = require('hapi-auth-basic');
+const credentials = require('hapi-context-credentials');
 const fs = require('fs');
 
 const server = new hapi.Server();
@@ -24,13 +25,14 @@ server.connection({
   },
 });
 
-server.register([inert, vision, hapiAuth, cookieAuth], (err) => {
+server.register([inert, vision, hapiAuth, cookieAuth, credentials], (err) => {
   if (err) throw err;
 
   const options = {
     password: '12345678901234567890123456789012345678901234567890123456789012345678901234567890',
     cookie: 'logged-in',
     isSecure: false,
+    // isSameSite: false,
     ttl: 24 * 60 * 60 * 1000,
   };
 
